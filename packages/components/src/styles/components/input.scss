@@ -1,0 +1,32 @@
+@use '../common/variables' as *;
+@use '../common/mixins' as *;
+
+.nexus-input {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  
+  &__inner {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    background-color: #fff;
+    border: 1px solid var(--nexus-border-color, #dcdfe6);
+    border-radius: var(--nexus-border-radius, 4px);
+    transition: border-color 0.2s;
+    font-size: var(--nexus-font-size-normal, 14px);
+    
+    &:focus {
+      outline: none;
+      border-color: var(--nexus-primary-color, #409eff);
+    }
+    
+    &.is-disabled {
+      background-color: #f5f7fa;
+      border-color: #e4e7ed;
+      color: #c0c4cc;
+      cursor: not-allowed;
+    }
+  }
+} 

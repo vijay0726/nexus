@@ -1,0 +1,20 @@
+{
+  "name": "@nexus/docs",
+  "version": "1.0.0",
+  "description": "Nexus 组件库文档站点",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vitepress": "^1.0.0-rc.40",
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "@nexus/components": "workspace:^1.0.0"
+  }
+}

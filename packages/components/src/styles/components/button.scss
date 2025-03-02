@@ -1,0 +1,50 @@
+@use '../common/variables' as *;
+@use '../common/mixins' as *;
+
+.nexus-button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid var(--nexus-border-color, #dcdfe6);
+  color: var(--nexus-text-color-regular, #606266);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: .1s;
+  font-weight: 500;
+  padding: 12px 20px;
+  font-size: var(--nexus-font-size-normal, 14px);
+  border-radius: var(--nexus-border-radius, 4px);
+  
+  &--primary {
+    color: #fff;
+    background-color: var(--nexus-primary-color, #409eff);
+    border-color: var(--nexus-primary-color, #409eff);
+  }
+  
+  &--success {
+    color: #fff;
+    background-color: var(--nexus-success-color, #67c23a);
+    border-color: var(--nexus-success-color, #67c23a);
+  }
+  
+  &--warning {
+    color: #fff;
+    background-color: var(--nexus-warning-color, #e6a23c);
+    border-color: var(--nexus-warning-color, #e6a23c);
+  }
+  
+  &--danger {
+    color: #fff;
+    background-color: var(--nexus-danger-color, #f56c6c);
+    border-color: var(--nexus-danger-color, #f56c6c);
+  }
+  
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+} 
