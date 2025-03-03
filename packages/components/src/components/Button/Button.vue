@@ -1,8 +1,8 @@
 <template>
   <button
-    class="nexus-button"
+    class="ne-button"
     :class="[
-      `nexus-button--${type}`,
+      `ne-button--${type}`,
       {
         'is-disabled': disabled,
       }
@@ -18,7 +18,7 @@
 import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
-  name: 'NexusButton',
+  name: 'NeButton',
   props: {
     type: {
       type: String as PropType<'default' | 'primary' | 'success' | 'warning' | 'danger'>,
@@ -47,7 +47,7 @@ export default defineComponent({
 </script>
 
 <style>
-.nexus-button {
+.ne-button {
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
@@ -66,31 +66,31 @@ export default defineComponent({
   border-radius: 4px;
 }
 
-.nexus-button--primary {
+.ne-button--primary {
   color: #fff;
   background-color: #409eff;
   border-color: #409eff;
 }
 
-.nexus-button--success {
+.ne-button--success {
   color: #fff;
   background-color: #67c23a;
   border-color: #67c23a;
 }
 
-.nexus-button--warning {
+.ne-button--warning {
   color: #fff;
   background-color: #e6a23c;
   border-color: #e6a23c;
 }
 
-.nexus-button--danger {
+.ne-button--danger {
   color: #fff;
   background-color: #f56c6c;
   border-color: #f56c6c;
 }
 
-.nexus-button.is-disabled {
+.ne-button.is-disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }

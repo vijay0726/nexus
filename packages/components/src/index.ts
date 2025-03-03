@@ -1,9 +1,10 @@
 // 组件库入口文件
-import { App } from 'vue'
-import './styles/index'
+import { App, Plugin } from 'vue'
 
 // 导入所有组件
-import * as components from './components'
+import components from './components/component'
+
+import './styles/index'
 
 // 导出所有组件 install 方法
 export * from './components'
@@ -16,10 +17,9 @@ export default {
     version,
     install(app: App) {
         // 注册所有组件
-        Object.entries(components).forEach(([name, component]) => {
-            console.log('index.ts: ', name, component);
-            
-            app.component(name, component)
+        components.forEach((comp: Plugin) => {
+            console.log('index.ts: ', comp);
+            app.use(comp)
         })
     }
 }
