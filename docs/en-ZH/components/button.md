@@ -1,15 +1,23 @@
+
 # Button 按钮
 
 常用的操作按钮，用于触发用户操作。
 
 ## 基础用法
-<div class="demo-button">
+
+:::demo test
+button/basic
+:::
+
+
+
+<!-- <div class="demo-button">
   <NeButton>测试按钮</NeButton>
   <NeButton type="primary">主要按钮</NeButton>
   <NeButton type="success">成功按钮</NeButton>
   <NeButton type="warning">警告按钮</NeButton>
   <NeButton type="danger">危险按钮</NeButton>
-</div>
+</div> -->
 
 
 ## 禁用状态

@@ -46,7 +46,7 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<!-- <style>
 .ne-button {
   display: inline-block;
   line-height: 1;
@@ -94,4 +94,4 @@ export default defineComponent({
   cursor: not-allowed;
   opacity: 0.5;
 }
-</style> 
+</style>  -->

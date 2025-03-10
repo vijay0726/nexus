@@ -1,14 +1,13 @@
 <template>
   <div class="demo-container">
     <div class="demo-example">
-      <component :is="DemoComponent" v-if="DemoComponent" />
-      <div v-else>
-        <slot name="source"></slot>
+      <div class="example-showcase">
+        <slot name="source" />
       </div>
     </div>
     <div class="demo-code">
       <div class="demo-code-content" v-if="codeVisible">
-        <slot name="code"></slot>
+        <SourceCode :visible="codeVisible" :source="source" />
       </div>
       <div class="demo-code-button" @click="toggleCode">
         {{ codeVisible ? '隐藏代码' : '显示代码' }}
@@ -18,13 +17,14 @@
 </template>
 
 <script setup>
-import { ref, computed, defineComponent, h } from 'vue'
+import { ref, computed } from 'vue'
+import SourceCode from './source-code.vue'
 
 const props = defineProps({
-  code: {
-    type: String,
-    default: ''
-  }
+  source: String,
+  path: String,
+  rawSource: String,
+  description: String
 })
 
 const codeVisible = ref(false)
@@ -32,18 +32,6 @@ const codeVisible = ref(false)
 function toggleCode() {
   codeVisible.value = !codeVisible.value
 }
-
-// 尝试将源代码编译为组件
-const DemoComponent = computed(() => {
-  try {
-    // 这里可以尝试动态编译组件，但在生产环境可能不工作
-    // 所以我们依赖 slot 机制
-    return null
-  } catch (e) {
-    console.error(e)
-    return null
-  }
-})
 </script>
 
 <style>
@@ -75,4 +63,4 @@ const DemoComponent = computed(() => {
   cursor: pointer;
   font-size: 14px;
 }
-</style> 
+</style>

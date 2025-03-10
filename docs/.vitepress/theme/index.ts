@@ -1,11 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
-import { h, defineAsyncComponent } from 'vue'
-import Demo from './components/Demo.vue'
+import Demo from '../../vitepress/components/demo.vue'
 
 import NexusUI from '@nexus/components'
-
-
-import { NeButton } from '@nexus/components'
 
 
 import './styles/index.css'
@@ -17,7 +13,6 @@ export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
     app.use(NexusUI)
-    // app.component('NeButton', NeButton)
     app.component('Demo', Demo)
   }
 } 

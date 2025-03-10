@@ -24,6 +24,7 @@ importers:
       '@nexus/components': workspace:^1.0.0
       '@types/markdown-it': ^14.1.2
       '@vitejs/plugin-vue': ^5.0.0
+      markdown-it-container: ^3.0.0
       vitepress: ^1.0.0-rc.40
       vue: ^3.0.0
     dependencies:
@@ -31,6 +32,7 @@ importers:
     devDependencies:
       '@types/markdown-it': 14.1.2
       '@vitejs/plugin-vue': 5.2.1_vue@3.5.13
+      markdown-it-container: 3.0.0
       vitepress: 1.6.3
       vue: 3.5.13
 
@@ -1859,6 +1861,10 @@ packages:
 
   /mark.js/8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
+    dev: true
+
+  /markdown-it-container/3.0.0:
+    resolution: {integrity: sha512-y6oKTq4BB9OQuY/KLfk/O3ysFhB3IMYoIWhGJEidXt1NQFocFK2sA2t0NYZAMyMShAGL6x5OPIbrmXPIqaN9rw==}
     dev: true
 
   /mdast-util-to-hast/13.2.0:

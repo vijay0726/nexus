@@ -4,7 +4,7 @@
 
 ## 基础用法
 
-:::demo
+
 ```vue
 <template>
   <div>
@@ -21,7 +21,6 @@ import { useToggle } from '@nexus/hooks'
 const { state, toggle, setTrue, setFalse } = useToggle(false)
 </script>
 ```
-:::
 
 ## API
 
