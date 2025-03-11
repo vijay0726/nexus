@@ -6,3 +6,8 @@
 
 buildProps 函数
 withInstall 函数
+
+
+### next
+
+自动注册组件
