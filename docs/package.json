@@ -18,6 +18,7 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "@nexus/components": "workspace:^1.0.0"
+    "@nexus/components": "workspace:^1.0.0",
+    "@vue/shared": "^3.0.0"
   }
 }

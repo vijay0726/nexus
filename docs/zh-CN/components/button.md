@@ -1,37 +1,38 @@
 
+<script setup>
+import EpButtonBasic from '../../examples/button/basic.vue'
+import EpButtonDisabled from '../../examples/button/disabled.vue'
+import EpButtonCustom from '../../examples/button/custom.vue'
+</script>
+
 # Button 按钮
 
 常用的操作按钮，用于触发用户操作。
 
 ## 基础用法
 
-:::demo test
+:::demo basic
+
 button/basic
+
 :::
 
 
 
-<!-- <div class="demo-button">
-  <NeButton>测试按钮</NeButton>
-  <NeButton type="primary">主要按钮</NeButton>
-  <NeButton type="success">成功按钮</NeButton>
-  <NeButton type="warning">警告按钮</NeButton>
-  <NeButton type="danger">危险按钮</NeButton>
-</div> -->
-
-
 ## 禁用状态
-按钮不可用状态。
+:::demo 使用 `disabled` 属性来定义按钮是否禁用。
 
-使用 `disabled` 属性来定义按钮是否禁用。
+button/disabled
 
-<div class="demo-button">
-  <NeButton disabled>禁用按钮</NeButton>
-  <NeButton type="primary" disabled>主要按钮</NeButton>
-  <NeButton type="success" disabled>成功按钮</NeButton>
-  <NeButton type="warning" disabled>警告按钮</NeButton>
-  <NeButton type="danger" disabled>危险按钮</NeButton>
-</div>
+:::
+
+## 自定义样式
+:::demo 使用 `type` 属性来定义按钮的类型。
+
+button/custom
+
+:::
+
 
 ## API
 

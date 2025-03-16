@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import SourceCode from './source-code.vue'
 
 const props = defineProps({
@@ -26,6 +26,7 @@ const props = defineProps({
   rawSource: String,
   description: String
 })
+
 
 const codeVisible = ref(false)
 

@@ -1,13 +1,29 @@
 import { Plugin } from "vite";
 import glob from 'fast-glob'
+import path from "path";
+import fs from 'fs'
+import { camelize } from '@vue/shared'
+import { docRoot } from "../../utils";
 
+
+type Append = Record<'headers' | 'footers' | 'scriptSetups', string[]>
+
+
+// 组件文档绝对路径
+// [ 'E:/study/code/nexus/docs/zh-CN/components' ]
 let compPaths: string[]
 
 export const MarkdownTransform = (): Plugin => {
     return {
         name: 'nexus-md-transform',
 
+        // 在其他插件之前执行
         enforce: 'pre',
+
+        // 添加configResolved钩子确认插件被加载
+        configResolved(config) {
+            console.log('MarkdownTransform插件配置已解析');
+        },
 
         async buildStart() {
             // 支持国际化时这里应该是读取配置，目前仅中文，写死
@@ -26,16 +42,70 @@ export const MarkdownTransform = (): Plugin => {
                 absolute: true, // 返回绝对路径
                 onlyDirectories: true, // 只返回文件夹
             })
-            console.log('----------compPaths:', compPaths)
+            console.log('---MarkdownTransform--buildStart-----compPaths:', compPaths)
 
         },
 
-        async transform(code, id) {
-            // if (!id.endsWith('.md')) return
-            console.log('----------id:', id)
-            // console.log('----------code:', code)
+        // async transform(code: string, id: string) {
 
-            return
-        }
+        //     if (!id.endsWith('.md')) return
+        //     const componentId = path.basename(id, '.md')
+        //     console.log('----MarkdownTransform---transform---componentId:', componentId)
+        //     if (componentId === 'button.md') {
+        //         console.log('----MarkdownTransform---transform---code:', code)
+
+        //     }
+
+        //     const append: Append = {
+        //         headers: [],
+        //         footers: [],
+        //         scriptSetups: getExampleImports(componentId)
+        //     }
+
+        //     // code = transformScriptSetup(code, append)
+
+
+        //     return {
+        //         code: code,
+        //         map: undefined,
+        //         ast: undefined,
+        //     }
+        // }
     }
+}
+
+
+const transformScriptSetup = (code: string, append: Append) => {
+
+    return
+}
+
+const transformComponentMarkdown = (id: string, componentId: string, code: string, append: Append) => {
+
+    return 
+ }
+
+const getExampleImports = (componentId: string) => {
+    console.log('----MarkdownTransform---getExampleImports---componentId:', componentId)
+
+    const examplePath = path.resolve(docRoot, 'examples', componentId)
+    console.log('----MarkdownTransform---getExampleImports---examplePath:', examplePath)
+
+    if (!fs.existsSync(examplePath)) return []
+    const files = fs.readdirSync(examplePath)
+    const imports: string[] = []
+
+    for (const item of files) {
+        if (!item.endsWith('.vue')) continue
+
+        const file = item.replace('.vue', '')
+        const name = camelize(`Ep-${componentId}-${file}`)
+
+        imports.push(`import ${name} from '../../examples/${componentId}/${item}.vue'`)
+
+    }
+
+    console.log('----MarkdownTransform---getExampleImports---files:', files)
+
+    return imports
 }

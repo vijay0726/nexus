@@ -6,6 +6,7 @@
 import { loadEnv, UserConfig } from 'vitepress'
 import Components from 'unplugin-vue-components/vite'
 import { MarkdownTransform } from '../plugins/markdown-transform'
+
 type ViteConfig = Required<UserConfig>['vite']
 
 export const getViteConfig = ({ mode }: { mode: string }): ViteConfig => {
@@ -33,8 +34,9 @@ export const getViteConfig = ({ mode }: { mode: string }): ViteConfig => {
                 // allow auto import and register components used in markdown
                 include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
             }) as any,
-            
-            MarkdownTransform()
+
+            // 自定义 markdown 转换
+            // MarkdownTransform()
         ],
         optimizeDeps: {}
     }
